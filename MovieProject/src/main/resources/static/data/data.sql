@@ -1,0 +1,6 @@
+CREATE USER 'movieProject'@'%' IDENTIFIED BY 'movieProject';
+GRANT ALL PRIVILEGES ON *.* TO 'movieProject'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+CREATE DATABASE movie;
+use movie
