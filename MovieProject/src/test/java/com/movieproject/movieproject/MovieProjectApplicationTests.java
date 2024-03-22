@@ -1,4 +1,4 @@
-package com.MovieProject.MovieProject;
+package com.movieproject.movieproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
