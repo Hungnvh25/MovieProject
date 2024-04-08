@@ -3,7 +3,7 @@ module.exports = defineConfig({
   transpileDependencies: true
 })
 
-module.exports = {
+module.exports ={
   // https://cli.vuejs.org/config/#devserver-proxy
   devServer: {
     port: 3000,
