@@ -5,3 +5,11 @@
     margin: 0;
     font-family: 'Mulish',sans-serif;
 }
+
+:root{
+    --primary-color: #1D1A39;
+    --secondary-color: #451952;
+    --third-color: #F39F5A;
+    --fourth-color: #E8BCB9;
+    --fifth-color:#6667b0;
+}
