@@ -3,9 +3,10 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const app = express();
 
-app.set('view engine', 'ejs');
+
+const app = express();
+app.set('view engine','ejs');
 app.set('views', 'views');
 
 
@@ -44,8 +45,18 @@ Movie.belongsToMany(Actor, { through: ActorMovie });
 Actor.belongsToMany(Movie, { through: ActorMovie });
 
 
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+const adminRoutes = require('./routes/pages');
+
+app.use('/admin',adminRoutes);
+
 sequelize
-.sync({ force: true })
+// .sync({ force: true })
+.sync()
 .then(
     app.listen(3000)
 )
