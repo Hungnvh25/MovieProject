@@ -3,7 +3,10 @@
         <div class="title">
             <div></div>
             <p>{{this.$route.params.table_name.toUpperCase()+' Table'}}</p>
-            <button>Add</button>
+            <router-link :to="{name:'create-table',params:{table_create:this.$route.params.table_name}}" target="_blank">
+                <button>Add</button>
+            </router-link>
+            
         </div>      
 
         <DynamicTable
@@ -136,7 +139,7 @@ export default {
 
     table{
         width: 98%;
-        height: 70%;
+        height: 100%;
         text-align: center;
         border-collapse: collapse;
     }

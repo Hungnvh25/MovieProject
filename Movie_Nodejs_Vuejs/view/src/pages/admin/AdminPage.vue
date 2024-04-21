@@ -63,6 +63,8 @@
       
       <div class="content">
         <router-view></router-view>
+        
+        
       </div>
     </main>
       
@@ -224,7 +226,7 @@ export default {
     display: none;
   } */
   .content{
-    height: 70%;
+    height: calc(100vh - 100px);
     width: 99%;
     margin: 5px;
     border: 1px solid;
