@@ -108,6 +108,30 @@ export default {
 
 }
 </script>
+
+<script>
+
+const uploadImage = async (file) => {
+  uploadStatus.value = true;
+  const formData = new FormData();
+  if (file) formData.append("file", file);
+
+  try {
+    const response = await axios({
+      method: "GET",
+      url: `http:/localhost:3000/`,
+      data: formData,
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+  } catch (error) {
+
+  }
+};
+
+</script>
  
 <style scoped>
  *{
