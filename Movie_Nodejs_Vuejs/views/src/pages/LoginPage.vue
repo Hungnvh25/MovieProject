@@ -1,5 +1,4 @@
 <template>
-   
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
     <div class="body">
@@ -109,29 +108,7 @@ export default {
 }
 </script>
 
-<script>
 
-const uploadImage = async (file) => {
-  uploadStatus.value = true;
-  const formData = new FormData();
-  if (file) formData.append("file", file);
-
-  try {
-    const response = await axios({
-      method: "GET",
-      url: `http:/localhost:3000/`,
-      data: formData,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
-
-  } catch (error) {
-
-  }
-};
-
-</script>
  
 <style scoped>
  *{
