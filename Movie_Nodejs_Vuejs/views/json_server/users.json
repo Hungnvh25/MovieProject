@@ -1,0 +1,32 @@
+{
+    "users":[
+        {
+            "id":1,
+            "username":"hieu",
+            "password":"1234",
+            "email":"hieu@gmail.com",
+            "phone":"0123456790"
+        },
+        {
+            "id":2,
+            "username":"hung",
+            "password":"5678",
+            "email":"hung@gmail.com",
+            "phone":"0123456790"
+        },
+        {
+            "id":3,
+            "username":"hieu",
+            "password":"1234",
+            "email":"hieu@gmail.com",
+            "phone":"0123456790"
+        },
+        {
+            "id":4,
+            "username":"hieu",
+            "password":"1234",
+            "email":"hieu@gmail.com",
+            "phone":"0123456790"
+        }
+    ]
+}

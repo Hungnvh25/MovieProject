@@ -1,0 +1,21 @@
+{
+    "mylists":[
+        {
+            "id":1,
+            "name":"avenger",
+            "user_id":1,
+            "movie_id":2
+        },
+        {
+            "id":2,
+            "name":"shin",
+            "user_id":2,
+            "movie_id":3
+        },{
+            "id":3,
+            "name":"jav",
+            "user_id":3,
+            "movie_id":4
+        }
+    ]
+}

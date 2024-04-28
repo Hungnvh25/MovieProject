@@ -36,7 +36,7 @@ const router = createRouter({
             component: AdminPage,
             children:[
                 {
-                    path:'/viewtable/:table_name',
+                    path:'/viewdata/:table_name',
                     component:TablePage
                 }
             ]

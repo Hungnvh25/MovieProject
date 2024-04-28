@@ -14,37 +14,37 @@
       <div class="sidebar">
         <div class="item">
           <i class='bx bx-movie' ></i>
-          <router-link to="/viewtable/movies">Movies</router-link>
+          <router-link to="/viewdata/movies">Movies</router-link>
         </div>
 
         <div class="item">
           <i class='bx bx-user' ></i>
-          <router-link to="/viewtable/users">Users</router-link>
+          <router-link to="/viewdata/users">Users</router-link>
         </div>
 
         <div class="item">
           <i class='bx bx-list-check' ></i>
-          <router-link to="/viewtable/mylists">My list</router-link>
+          <router-link to="/viewdata/mylists">My list</router-link>
         </div>
 
         <div class="item">
           <i class='bx bx-body' ></i>
-          <router-link to="/viewtable/actors">Actors</router-link>
+          <router-link to="/viewdata/actors">Actors</router-link>
         </div>
 
         <div class="item">
           <i class='bx bx-world' ></i>
-          <router-link to="/viewtable/countries">Countries</router-link>
+          <router-link to="/viewdata/countries">Countries</router-link>
         </div>
 
         <div class="item">
           <i class='bx bx-category' ></i>
-          <router-link to="/viewtable/genres">Genres</router-link>
+          <router-link to="/viewdata/genres">Genres</router-link>
         </div>
 
         <div class="item">
           <i class='bx bxs-comment-detail' ></i>
-          <router-link to="/viewtable/comments">Comments</router-link>
+          <router-link to="/viewdata/comments">Comments</router-link>
         </div>
       </div>
     </div>

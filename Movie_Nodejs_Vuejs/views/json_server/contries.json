@@ -1,0 +1,18 @@
+{
+    "countries":[
+        {
+            "id":1,
+            "name":"VietNam",
+            "movie_id":1
+        },
+        {
+            "id":2,
+            "name":"JaPan",
+            "movie_id":3
+        },{
+            "id":3,
+            "name":"American",
+            "movie_id":2
+        }
+    ]
+}

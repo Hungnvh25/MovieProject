@@ -31,20 +31,13 @@
     },
     methods:{
       getNameTableEdit(){
-        let tableName = this.$route.params.table_edit
         let idDetail = this.$route.params.id
-        axios.get('http://localhost:3000/table').then(res=>{
-          for(let i=0;i < res.data.length;i++){
-            if(res.data[i][tableName]){
-              this.name_column = Object.keys(res.data[i][tableName][0])
-              for(let j=0;j<res.data[i][tableName].length;j++){
-                if(res.data[i][tableName][j].id == idDetail){
-                    this.id_detail = res.data[i][tableName][j];
-                    break;
-                }
-              }
-            //   console.log(this.id_detail)
-              break;
+        axios.get(`http://localhost:3000/${this.$route.params.table_edit}`).then(res=>{
+          this.name_column = Object.keys(res.data[0])
+          for(let i=0;i<res.data.length;i++){
+            if(res.data[i].id == idDetail){
+                this.id_detail = res.data[i];
+                break;
             }
           }
         }).catch(error => {

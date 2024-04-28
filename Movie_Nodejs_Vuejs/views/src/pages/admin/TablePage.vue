@@ -6,11 +6,9 @@
             <router-link :to="{name:'create-table',params:{table_create:this.$route.params.table_name}}" target="_blank">
                 <button>Add</button>
             </router-link>
-            
-        </div>      
-
+        </div>
         <DynamicTable
-        :entity-type="'movies'"
+        :entity-type="'movies'" 
         :headers="['Id', 'Name', 'Title', 'Image','Video','View','Like','Description','Year']"
         :data="tables"
         v-if="$route.params.table_name === 'movies'"
@@ -57,14 +55,11 @@
         :data="tables"
         v-if="$route.params.table_name === 'comments'"
         />
-
-        
     </div>
     
 </template>
 
 <script>
-// import sourdata from '@/data.json' 
 import axios from 'axios';
 import DynamicTable from './../admin/dynamicTable/DynamicTable.vue'
 export default {
@@ -81,14 +76,8 @@ export default {
     },
     methods:{
         getTable() {
-            let tablename = this.$route.params.table_name;
-            axios.get(`http://localhost:3000/table`).then((res) => {
-                for(let i = 0; i < res.data.length; i++) {
-                    if(res.data[i][tablename]) {
-                        this.tables = res.data[i][tablename];
-                        break; 
-                    }
-                }
+            axios.get(`http://localhost:3000/${this.$route.params.table_name}`).then((res) => {
+                this.tables = res.data
             }).catch(error => {
                 console.error(error);
             });
