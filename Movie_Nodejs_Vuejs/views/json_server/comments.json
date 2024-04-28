@@ -1,0 +1,21 @@
+{
+    "comments":[
+        {
+            "id":1,
+            "text":"nice",
+            "user_id":1,
+            "movie_id":2
+        },
+        {
+            "id":2,
+            "text":"good",
+            "user_id":2,
+            "movie_id":3
+        },{
+            "id":3,
+            "text":"bad",
+            "user_id":3,
+            "movie_id":1
+        }
+    ]
+}

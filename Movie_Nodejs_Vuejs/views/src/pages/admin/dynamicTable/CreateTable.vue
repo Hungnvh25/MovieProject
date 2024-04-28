@@ -30,15 +30,10 @@ export default {
   },
   methods:{
     getNameTableCreate(){
-      let tablename = this.$route.params.table_create
-      axios.get('http://localhost:3000/table').then(res=>{
-        for(let i=0;i < res.data.length;i++){
-          if(res.data[i][tablename]){
-            this.name_column = Object.keys(res.data[i][tablename][0])
-            // console.log(Object.keys(res.data[i][tablename][0]))
-            break;
-          }
-        }
+      
+      axios.get(`http://localhost:3000/${this.$route.params.table_create}`).then(res=>{
+        this.name_column = Object.keys(res.data[0])
+        
       }).catch(error => {
             console.error(error);
         });
