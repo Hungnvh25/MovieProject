@@ -45,12 +45,12 @@ Movie.belongsToMany(Actor, { through: ActorMovie });
 Actor.belongsToMany(Movie, { through: ActorMovie });
 
 
-
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-const adminRoutes = require('./routes/pages');
+const adminRoutes = require('./routes/admin');
 
 app.use('/admin',adminRoutes);
 
