@@ -190,14 +190,20 @@ export default {
     transform: rotate(90deg);
   }
 
-  .container .left-section .sidebar .item .sub-menu{
+  /* .container .left-section .sidebar .item .sub-menu */
+
+  .sub-menu{
     display:flex;
+    height: 350px;
     flex-direction: column;
     width: 100%;
     cursor: pointer;
     background-color: #682a7b;
-    overflow: hidden;
-    transition: 5s ease;
+    overflow-x: hidden;
+    transition: 0.3s ease;
+  }
+  .sub-menu::-webkit-scrollbar{
+    width: 0px;
   }
 
   .table-dropdown{
