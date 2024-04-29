@@ -13,44 +13,48 @@
 
       <div class="sidebar">
         <div class="item">
-          <i class='bx bx-movie' ></i>
-          <router-link to="/viewdata/movies">Movies</router-link>
-        </div>
+          <p @click="ToggleTable">Tables<i :class="['bx bx-chevron-right' ,'dropdown',{'table-arrow':tableArrow}]"></i></p>
+          <div :class="['sub-menu',{'table-dropdown': tableDropdown}]">
+            <div class="sub-item">
+              <i class='bx bx-movie' ></i>
+              <router-link to="/viewdata/movies">Movies</router-link>
+            </div>
 
-        <div class="item">
-          <i class='bx bx-user' ></i>
-          <router-link to="/viewdata/users">Users</router-link>
-        </div>
+            <div class="sub-item">
+              <i class='bx bx-user' ></i>
+              <router-link to="/viewdata/users">Users</router-link>
+            </div>
 
-        <div class="item">
-          <i class='bx bx-list-check' ></i>
-          <router-link to="/viewdata/mylists">My list</router-link>
-        </div>
+            <div class="sub-item">
+              <i class='bx bx-list-check' ></i>
+              <router-link to="/viewdata/mylists">My list</router-link>
+            </div>
 
-        <div class="item">
-          <i class='bx bx-body' ></i>
-          <router-link to="/viewdata/actors">Actors</router-link>
-        </div>
+            <div class="sub-item">
+              <i class='bx bx-body' ></i>
+              <router-link to="/viewdata/actors">Actors</router-link>
+            </div>
 
-        <div class="item">
-          <i class='bx bx-world' ></i>
-          <router-link to="/viewdata/countries">Countries</router-link>
-        </div>
+            <div class="sub-item">
+              <i class='bx bx-world' ></i>
+              <router-link to="/viewdata/countries">Countries</router-link>
+            </div>
 
-        <div class="item">
-          <i class='bx bx-category' ></i>
-          <router-link to="/viewdata/genres">Genres</router-link>
-        </div>
+            <div class="sub-item">
+              <i class='bx bx-category' ></i>
+              <router-link to="/viewdata/genres">Genres</router-link>
+            </div>
 
-        <div class="item">
-          <i class='bx bxs-comment-detail' ></i>
-          <router-link to="/viewdata/comments">Comments</router-link>
+            <div class="sub-item">
+              <i class='bx bxs-comment-detail' ></i>
+              <router-link to="/viewdata/comments">Comments</router-link>
+            </div>         
+          </div>
         </div>
+        
       </div>
     </div>
 
-    
-      
     <main>
       <!-- Navbar -->
       <div class="nav-bar"  >
@@ -63,12 +67,8 @@
       
       <div class="content">
         <router-view></router-view>
-        
-        
       </div>
     </main>
-      
-    
   </div>
 </template>
 
@@ -77,16 +77,20 @@ export default {
   data(){
     return{
       menuBtn:true,
+      tableDropdown:true,
+      tableArrow: false
     }
   },
   methods:{
     ToggleMenu(){
       this.menuBtn = !this.menuBtn;
+    },
+    ToggleTable(){
+      this.tableDropdown = !this.tableDropdown;
+      this.tableArrow = !this.tableArrow;
     }
   }
 }
-  
-
 </script>
 
 <style scoped>
@@ -109,25 +113,22 @@ export default {
     position: relative;
     height: 100vh;
     width: 15%;
-    /* left: 0px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--secondary-color);
     transition: 0.3s ease;
-    /* transition-property: left; */
     box-sizing: border-box;
+    overflow: hidden;
   }
   .container .active{
-    display: none;
-    /* left: -200px; */
+    width: 0%;
   }
 
   .container .left-section .logo{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
     background-color: var(--primary-color);
     width: 100%;
     height: 80px;
@@ -155,29 +156,68 @@ export default {
 
   .container .left-section .sidebar{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top:20px;
-    width: 80%;
+    height: calc(100vh - 80px);
+    width: 100%;
+    overflow-x: hidden;
   }
-
   .container .left-section .sidebar .item{
-    display:flex;
-    gap:20px;
-    cursor: pointer;
-  }
-
-  .container .left-section .sidebar a,i{
     display: flex;
-    align-items: center;
-    gap: 30px;
+    flex-direction: column;
+    line-height: 50px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+  }
+  .container .left-section .sidebar .item p,i{
     font-size: 120%;
     color: var(--fourth-color);
     overflow: hidden;
   }
+  .container .left-section .sidebar .item p{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+  }
 
-  .container .left-section .sidebar .item:active a,
-  .container .left-section .sidebar .item:active i
+  .container .left-section .sidebar .item .dropdown{
+    position: absolute;
+    right: 0px;
+    margin: 15px;
+    transition: 0.2s ease;
+  }
+  .table-arrow{
+    transform: rotate(90deg);
+  }
+
+  .container .left-section .sidebar .item .sub-menu{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    cursor: pointer;
+    background-color: #682a7b;
+    overflow: hidden;
+    transition: 5s ease;
+  }
+
+  .table-dropdown{
+    height: 0px;
+  }
+
+  .container .left-section .sidebar .item .sub-menu .sub-item{
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+  }
+
+  .container .left-section .sidebar .item .sub-menu .sub-item a,i{
+    font-size: 100%;
+    color: var(--fourth-color);
+    overflow: hidden;
+  } 
+
+  .container .left-section .sidebar .sub-item:active a,
+  .container .left-section .sidebar .sub-item:active i
   {
     color: var(--third-color);
   }

@@ -16,7 +16,7 @@
 
         <DynamicTable
         :entity-type="'users'"
-        :headers="['Id', 'Username', 'Password', 'Email','Phone']"
+        :headers="['id', 'userName', 'passWord', 'email','phone']"
         :data="tables"
         v-if="$route.params.table_name === 'users'"
         />
@@ -61,7 +61,7 @@
 
 <script>
 import axios from 'axios';
-import DynamicTable from './../admin/dynamicTable/DynamicTable.vue'
+import DynamicTable from './dynamicTable/DynamicTable.vue'
 export default {
     components:{
         DynamicTable
@@ -76,8 +76,8 @@ export default {
     },
     methods:{
         getTable() {
-            axios.get(`http://localhost:3000/${this.$route.params.table_name}`).then((res) => {
-                this.tables = res.data
+            axios.get(`http://localhost:3000/admin/${this.$route.params.table_name}`).then((res) => {
+                this.tables = res.data[this.$route.params.table_name]
             }).catch(error => {
                 console.error(error);
             });
