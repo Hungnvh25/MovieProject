@@ -8,7 +8,7 @@ const GenreMovie = sequelize.define('genreMovie', {
     autoIncrement: true,
     allowNull: false,
     primaryKey: true
-  },
+  }
 
 });
 
