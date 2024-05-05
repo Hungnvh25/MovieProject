@@ -31,9 +31,10 @@ export default {
   methods:{
     getNameTableCreate(){
       
-      axios.get(`http://localhost:3000/${this.$route.params.table_create}`).then(res=>{
-        this.name_column = Object.keys(res.data[0])
+      axios.get(`http://localhost:3000/admin/${this.$route.params.table_create}`).then(res=>{
         
+        this.name_column = Object.keys(res.data[this.$route.params.table_create][0])
+        this.name_column.length -= 2
       }).catch(error => {
             console.error(error);
         });

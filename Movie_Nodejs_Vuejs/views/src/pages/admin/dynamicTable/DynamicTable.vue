@@ -9,7 +9,7 @@
   
       <tbody v-if="data.length">
         <tr v-for="item in paginatedData" :key="item.id">
-          <td v-for="property in headers" :key="property">{{ item[property.toLowerCase()] }}</td>
+          <td v-for="property in headers" :key="property">{{ item[property] }}</td>
           <td>
             <router-link :to="{name:'edit-table',params:{table_edit:this.$route.params.table_name,id:item.id}}" target="_blank"><button class="edit-button">Edit</button></router-link>
             <button class="delete-button">Delete</button>

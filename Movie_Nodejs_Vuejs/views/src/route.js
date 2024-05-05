@@ -3,7 +3,7 @@ import Login from '@/pages/LoginPage.vue'
 import SignUp from '@/pages/SignUp.vue'
 import HomePage from '@/pages/HomePage.vue'
 import AdminPage from '@/pages/admin/AdminPage.vue'
-import TablePage from '@/pages/admin/TablePage.vue'
+import DataPage from '@/pages/admin/DataPage.vue'
 import CreatePage from '@/pages/admin/dynamicTable/CreateTable.vue'
 import EditTable from '@/pages/admin/dynamicTable/EditTable.vue'
 
@@ -37,7 +37,7 @@ const router = createRouter({
             children:[
                 {
                     path:'/viewdata/:table_name',
-                    component:TablePage
+                    component:DataPage
                 }
             ]
         },

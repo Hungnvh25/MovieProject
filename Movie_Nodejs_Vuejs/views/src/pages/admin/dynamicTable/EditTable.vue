@@ -32,11 +32,12 @@
     methods:{
       getNameTableEdit(){
         let idDetail = this.$route.params.id
-        axios.get(`http://localhost:3000/${this.$route.params.table_edit}`).then(res=>{
-          this.name_column = Object.keys(res.data[0])
-          for(let i=0;i<res.data.length;i++){
-            if(res.data[i].id == idDetail){
-                this.id_detail = res.data[i];
+        axios.get(`http://localhost:3000/admin/${this.$route.params.table_edit}`).then(res=>{
+          this.name_column = Object.keys(res.data[this.$route.params.table_edit][0])
+          this.name_column.length -= 2
+          for(let i=0;i<res.data[this.$route.params.table_edit].length;i++){
+            if(res.data[this.$route.params.table_edit][i].id == idDetail){
+                this.id_detail = res.data[this.$route.params.table_edit][i];
                 break;
             }
           }
